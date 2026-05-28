@@ -1,0 +1,31 @@
+name: Deploy to IONOS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up rsync over SSH (via lftp)
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Deploy via SFTP to IONOS webspace
+        env:
+          SFTP_HOST: ${{ secrets.IONOS_SFTP_HOST }}
+          SFTP_USER: ${{ secrets.IONOS_SFTP_USER }}
+          SFTP_PASS: ${{ secrets.IONOS_SFTP_PASS }}
+          SFTP_REMOTE_DIR: ${{ secrets.IONOS_SFTP_REMOTE_DIR }}
+        run: |
+          lftp -e "
+            set sftp:auto-confirm yes;
+            set ssl:verify-certificate no;
+            open -u $SFTP_USER,$SFTP_PASS sftp://$SFTP_HOST;
+            mirror --reverse --delete --verbose --exclude-glob .git/ --exclude-glob .github/ --exclude-glob README.md --exclude-glob .gitignore ./ $SFTP_REMOTE_DIR;
+            bye
+          "
