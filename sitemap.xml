@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://cedrumo.com/de/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://cedrumo.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cedrumo.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cedrumo.com/de/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://cedrumo.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://cedrumo.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cedrumo.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cedrumo.com/de/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://cedrumo.com/de/features/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://cedrumo.com/de/features/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cedrumo.com/en/features/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cedrumo.com/en/features/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://cedrumo.com/de/features/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cedrumo.com/en/features/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://cedrumo.com/de/premium/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://cedrumo.com/de/premium/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cedrumo.com/en/premium/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cedrumo.com/en/premium/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://cedrumo.com/de/premium/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cedrumo.com/en/premium/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://cedrumo.com/de/fachhaendler/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://cedrumo.com/de/fachhaendler/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cedrumo.com/en/retailers/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cedrumo.com/en/retailers/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://cedrumo.com/de/fachhaendler/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cedrumo.com/en/retailers/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://cedrumo.com/de/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://cedrumo.com/de/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cedrumo.com/en/privacy/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://cedrumo.com/en/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://cedrumo.com/de/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cedrumo.com/en/privacy/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://cedrumo.com/de/support/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://cedrumo.com/de/support/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cedrumo.com/en/support/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://cedrumo.com/en/support/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://cedrumo.com/de/support/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cedrumo.com/en/support/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://cedrumo.com/de/impressum/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://cedrumo.com/de/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cedrumo.com/en/legal/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://cedrumo.com/en/legal/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://cedrumo.com/de/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cedrumo.com/en/legal/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

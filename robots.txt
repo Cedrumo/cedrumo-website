@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# CEDRUMO is a personal cigar collection app website. No paywalls, no
+# tracking, no private content gated behind auth — everything here is
+# meant to be discovered and indexed.
+
+Sitemap: https://cedrumo.com/sitemap.xml
