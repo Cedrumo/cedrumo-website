@@ -561,7 +561,26 @@ section.alt { background: var(--bg-surface); }
 }
 
 @media (max-width: 768px) {
-  .nav { display: none; }
+  /* Header wraps to two rows on mobile so the navigation stays reachable
+     without needing a JavaScript hamburger menu. Brand + lang switch sit
+     on row one, nav links wrap below on row two. */
+  .header-inner {
+    flex-wrap: wrap;
+    row-gap: 10px;
+    padding: 14px 0;
+  }
+  .brand { font-size: 22px; letter-spacing: 3px; }
+  .nav {
+    order: 2;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: flex-start;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-soft);
+  }
+  .nav a { font-size: 13px; letter-spacing: 0.3px; }
+  .lang-switch { margin-left: auto; }
   section { padding: 56px 0; }
   .hero { padding: 64px 0 48px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
