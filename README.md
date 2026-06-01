@@ -90,7 +90,7 @@ Settings → Secrets and variables → Actions → New repository secret
 | `IONOS_SFTP_HOST` | `access-5020562671.webspace-host.com` | Stable IONOS endpoint for this webspace |
 | `IONOS_SFTP_USER` | `su570288` | IONOS contract user ID |
 | `IONOS_SFTP_PASS` | (see IONOS dashboard or password manager) | Rotate from IONOS dashboard if compromised |
-| `IONOS_SFTP_REMOTE_DIR` | `/` | Webspace root. Change to `/cedrumo.com/` only if IONOS dashboard shows the domain bound to a subdirectory |
+| `IONOS_SFTP_REMOTE_DIR` | `/Website/` | cedrumo.com is bound at the IONOS dashboard to a `Website` folder inside the webspace. Deploy must target this subdirectory; deploying to `/` (webspace root) does NOT serve to cedrumo.com and the next `mirror --delete` would wipe the `Website` folder. Do NOT change to `/`. |
 
 ### Rotating the SFTP password
 
@@ -107,9 +107,12 @@ SSHPASS='<the-password>' sshpass -e lftp -e \
    mirror --reverse --delete --verbose \
      --exclude-glob .git* --exclude-glob .github* \
      --exclude-glob README.md --exclude-glob .gitignore \
-     . /; bye" \
+     . /Website/; bye" \
   sftp://su570288@access-5020562671.webspace-host.com
 ```
+
+Note the trailing `/Website/` — see the `IONOS_SFTP_REMOTE_DIR` row in the
+secrets table for why this subdirectory is mandatory.
 
 ---
 
