@@ -116,6 +116,44 @@ secrets table for why this subdirectory is mandatory.
 
 ---
 
+## Rollback procedure
+
+If a deploy puts a bad build live (broken layout, missing page, regressed
+content) the recovery path is git-driven and takes about a minute:
+
+```bash
+git revert <bad-commit-sha>     # creates an inverse commit
+git push origin main            # triggers the SFTP deploy workflow
+```
+
+The GitHub Actions workflow re-mirrors the now-reverted working tree to
+the IONOS webspace, so the prior good state goes live within ~30 seconds
+of the push. No manual SFTP intervention needed for the common case.
+
+If GitHub Actions itself is unavailable or the working tree is in an
+unrecoverable state, the manual fallback above (lftp via SFTP into
+`/Website/`) can push any local snapshot. The IONOS Webhosting Standard
+customer dashboard also offers an automatic snapshot backup feature
+(Hosting → Webhosting Standard → Backups) that holds several days of
+file-level snapshots and can roll the entire webspace back from within
+the IONOS UI — this is the second line of defence if both the GitHub
+repo and the local working tree are compromised.
+
+### What the deploy workflow refuses to do
+
+The `Guard against destructive REMOTE_DIR misconfiguration` step in
+`.github/workflows/deploy.yml` aborts before lftp runs if
+`IONOS_SFTP_REMOTE_DIR` is empty, exactly `/`, `.`, `./`, or any path
+that does not start with `/Website`. This is the programmatic backstop
+against the failure mode that took cedrumo.com offline on 1 June 2026
+when the secret was briefly set to `/` and `mirror --reverse --delete`
+wiped the `Website` wrapper folder cedrumo.com is bound to. If the
+guard ever triggers, fix the secret (`gh secret set
+IONOS_SFTP_REMOTE_DIR -R Cedrumo/cedrumo-website` then type `/Website/`)
+and re-run the workflow.
+
+---
+
 ## What is provisional and needs to be replaced
 
 | File | What replaces it | Owner |
