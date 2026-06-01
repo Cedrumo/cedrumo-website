@@ -60,7 +60,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* Skip-to-content link (WCAG 2.4.1 Bypass Blocks) — visible only on keyboard focus */
 .skip-link {
   position: absolute;
-  top: -40px;
+  top: -56px;
   left: 16px;
   background: var(--gold);
   color: var(--bg-deep);
@@ -617,4 +617,30 @@ section.alt { background: var(--bg-surface); }
   .hero { padding: 64px 0 48px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+}
+
+/* Print stylesheet — keeps Impressum / Datenschutz legible on paper without dumping
+   the midnight-blue background through the printer. */
+@media print {
+  html, body {
+    background: #fff !important;
+    color: #000 !important;
+    overflow-x: visible;
+  }
+  .site-header, .site-footer, .skip-link, .cta-row, .hero-visuals, .qr-block .qr-slot {
+    display: none !important;
+  }
+  .hero { padding: 0 0 24px; background: none; }
+  .hero .eyebrow, .section-head .eyebrow { color: #444; }
+  h1, h2, h3, h4 { color: #000 !important; page-break-after: avoid; }
+  h1 { font-size: 24pt; }
+  h2 { font-size: 18pt; }
+  h3 { font-size: 14pt; }
+  p, li { color: #000 !important; font-size: 11pt; line-height: 1.5; orphans: 3; widows: 3; }
+  a { color: #000 !important; text-decoration: underline; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #555; }
+  a[href^="mailto:"]::after { content: ""; }
+  .container, .prose { max-width: none; padding: 0; }
+  .alt, .trust-band { background: none !important; }
+  section { padding: 16px 0; }
 }

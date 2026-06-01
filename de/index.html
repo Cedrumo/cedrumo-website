@@ -33,7 +33,9 @@
   <link rel="alternate" hreflang="en" href="https://cedrumo.com/en/">
   <link rel="alternate" hreflang="x-default" href="https://cedrumo.com/de/">
   <title>CEDRUMO — Persönlicher Begleiter für Zigarrengenuss</title>
-  <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/cormorant-garamond-400.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/inter-400.woff2">
+<link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
@@ -134,8 +136,8 @@
         <p class="lead">CEDRUMO startet in Deutschland, Österreich und der Schweiz. Weitere Märkte folgen.</p>
       </div>
       <div class="cta-row">
-        <a href="#" class="btn btn-primary" aria-label="App Store Link folgt">App Store · folgt</a>
-        <a href="#" class="btn btn-primary" aria-label="Google Play Link folgt">Google Play · folgt</a>
+        <span role="button" aria-disabled="true" class="btn btn-primary" aria-label="App Store Link folgt mit Veröffentlichung der App">App Store · folgt</span>
+        <span role="button" aria-disabled="true" class="btn btn-primary" aria-label="Google Play Link folgt mit Veröffentlichung der App">Google Play · folgt</span>
       </div>
     </div>
   </section>
