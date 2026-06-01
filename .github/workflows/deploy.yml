@@ -24,7 +24,6 @@ jobs:
         run: |
           lftp -e "
             set sftp:auto-confirm yes;
-            set ssl:verify-certificate no;
             open -u $SFTP_USER,$SFTP_PASS sftp://$SFTP_HOST;
             mirror --reverse --delete --verbose --exclude-glob .git/ --exclude-glob .github/ --exclude-glob README.md --exclude-glob .gitignore ./ $SFTP_REMOTE_DIR;
             bye
