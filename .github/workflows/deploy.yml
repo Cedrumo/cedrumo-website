@@ -15,6 +15,23 @@ jobs:
       - name: Set up rsync over SSH (via lftp)
         run: sudo apt-get update && sudo apt-get install -y lftp
 
+      - name: Guard against destructive REMOTE_DIR misconfiguration
+        env:
+          SFTP_REMOTE_DIR: ${{ secrets.IONOS_SFTP_REMOTE_DIR }}
+        run: |
+          if [ -z "$SFTP_REMOTE_DIR" ]; then
+            echo "FATAL: IONOS_SFTP_REMOTE_DIR secret is empty. cedrumo.com is bound at the IONOS dashboard to a 'Website' subfolder inside the webspace. Set the secret to '/Website/' before re-running." >&2
+            exit 1
+          fi
+          if [ "$SFTP_REMOTE_DIR" = "/" ] || [ "$SFTP_REMOTE_DIR" = "." ] || [ "$SFTP_REMOTE_DIR" = "./" ]; then
+            echo "FATAL: IONOS_SFTP_REMOTE_DIR='$SFTP_REMOTE_DIR' would deploy to the SFTP root and 'mirror --delete' would wipe the 'Website' subfolder that cedrumo.com is bound to. Refusing. Set the secret to '/Website/' instead. See README.md for the binding mechanism." >&2
+            exit 1
+          fi
+          case "$SFTP_REMOTE_DIR" in
+            /Website|/Website/|/Website/*) echo "OK: SFTP_REMOTE_DIR='$SFTP_REMOTE_DIR' targets the cedrumo.com binding folder." ;;
+            *) echo "FATAL: IONOS_SFTP_REMOTE_DIR='$SFTP_REMOTE_DIR' does not start with '/Website'. cedrumo.com is bound at the IONOS dashboard to the 'Website' subfolder of the webspace; deploying anywhere else does not serve to the domain. Refusing. See README.md." >&2 ; exit 1 ;;
+          esac
+
       - name: Deploy via SFTP to IONOS webspace
         env:
           SFTP_HOST: ${{ secrets.IONOS_SFTP_HOST }}
