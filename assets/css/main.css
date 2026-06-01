@@ -37,6 +37,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -48,6 +49,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 a { color: var(--gold); text-decoration: none; }
@@ -470,6 +472,14 @@ section.alt { background: var(--bg-surface); }
   .b2b-intro, .b2b-pair, .b2b-steps { grid-template-columns: 1fr; }
   .qr-block { grid-template-columns: 1fr; text-align: center; }
   .qr-block .qr-slot { margin: 0 auto; }
+
+  /* Mobile hero: tighten the rotated rear phone frame so its rotated corner
+     does not poke past the viewport right edge (was causing a 3px horizontal
+     overflow on iPhone-class devices). */
+  .hero-visuals { height: 480px; max-width: 320px; }
+  .phone-frame { width: 200px; }
+  .phone-frame--rear { right: 16px; top: 12px; }
+  .phone-frame--front { left: 0; bottom: 0; }
 }
 
 /* TEXT BLOCKS */
