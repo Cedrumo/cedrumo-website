@@ -334,6 +334,11 @@ section.alt { background: var(--bg-surface); }
   border: 1px solid var(--border-soft);
   border-radius: 10px;
   padding: 26px 22px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.b2b-intro .col:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
 }
 .b2b-intro .col .step {
   font-size: 11px;
@@ -367,6 +372,11 @@ section.alt { background: var(--bg-surface); }
   border: 1px solid var(--border-soft);
   border-radius: 10px;
   padding: 30px 28px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.b2b-pair .col:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
 }
 .b2b-pair .col h3 {
   font-family: 'Inter', sans-serif;
