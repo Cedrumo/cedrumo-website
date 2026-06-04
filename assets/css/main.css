@@ -147,7 +147,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .hero h1 {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(36px, 8vw, 88px);
+  font-size: clamp(32px, 8vw, 88px);
   font-weight: 600;
   line-height: 1.05;
   color: var(--cream);
