@@ -1,0 +1,72 @@
+<!--
+  CEDRUMO — Captioned screenshot strip (EUR 750 polish round).
+
+  STATUS: component + CSS (.shot-strip in assets/css/main.css) are live and responsive.
+  Pending only the four curated app screenshots, which come from the App Store
+  screenshot run (Luxus-Dashboard, Abendplaner result, Humidor list, Pairing detail).
+
+  TO ACTIVATE (about 2 minutes, no design work):
+  1. Export the four screenshots and place them in /assets/images/ as:
+       app-dashboard.png   app-planner.png   app-humidor.png   app-pairing.png
+  2. Paste the matching language block below into:
+       - de/index.html  and  en/index.html   -> between the </section> of the
+         cards grid (class="alt") and the <section class="trust-band">
+       - de/features/index.html and en/features/index.html -> optional, after the <h1>
+  3. Commit + push to main. IONOS auto-deploys.
+-->
+
+<!-- ===== GERMAN (de/) ===== -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">In der App</div>
+      <h2>Was Sie erwartet</h2>
+    </div>
+    <div class="shot-strip">
+      <div class="shot">
+        <div class="phone"><img src="/assets/images/app-dashboard.png" alt="CEDRUMO Luxus-Dashboard mit Sammlungswert und Favoriten"></div>
+        <p class="caption"><strong>Luxus-Dashboard</strong>Sammlungswert, Bewertung und Nachkauf-Fokus auf einen Blick.</p>
+      </div>
+      <div class="shot">
+        <div class="phone"><img src="/assets/images/app-planner.png" alt="CEDRUMO Abendplaner mit Empfehlung"></div>
+        <p class="caption"><strong>Abendplaner</strong>Die passende Zigarre aus Ihrer Sammlung, nach Anlass, Zeit und Stärke.</p>
+      </div>
+      <div class="shot">
+        <div class="phone"><img src="/assets/images/app-humidor.png" alt="CEDRUMO Humidor-Ansicht mit Bestand"></div>
+        <p class="caption"><strong>Humidor</strong>Bestand und Wert je Standort, mit klarem Nachkauf-Hinweis.</p>
+      </div>
+      <div class="shot">
+        <div class="phone"><img src="/assets/images/app-pairing.png" alt="CEDRUMO Pairing aus Zigarre und Rum"></div>
+        <p class="caption"><strong>Pairing</strong>Zigarre und passender Rum aus Ihrem eigenen Bestand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ENGLISH (en/) ===== -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Inside the app</div>
+      <h2>What to expect</h2>
+    </div>
+    <div class="shot-strip">
+      <div class="shot">
+        <div class="phone"><img src="/assets/images/app-dashboard.png" alt="CEDRUMO Luxury Dashboard with collection value and favourites"></div>
+        <p class="caption"><strong>Luxury Dashboard</strong>Collection value, ratings and restock focus at a glance.</p>
+      </div>
+      <div class="shot">
+        <div class="phone"><img src="/assets/images/app-planner.png" alt="CEDRUMO Evening Planner with a recommendation"></div>
+        <p class="caption"><strong>Evening Planner</strong>The right cigar from your own collection, by occasion, time and strength.</p>
+      </div>
+      <div class="shot">
+        <div class="phone"><img src="/assets/images/app-humidor.png" alt="CEDRUMO humidor view with stock"></div>
+        <p class="caption"><strong>Humidor</strong>Stock and value per location, with a clear restock notice.</p>
+      </div>
+      <div class="shot">
+        <div class="phone"><img src="/assets/images/app-pairing.png" alt="CEDRUMO pairing of cigar and rum"></div>
+        <p class="caption"><strong>Pairing</strong>A cigar matched with a rum from your own collection.</p>
+      </div>
+    </div>
+  </div>
+</section>
