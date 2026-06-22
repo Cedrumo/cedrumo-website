@@ -501,7 +501,7 @@ section.alt { background: var(--bg-surface); }
 .shot { text-align: center; }
 .shot .phone {
   max-width: 230px;
-  margin: 0 auto 18px;
+  margin: 0 auto 30px;
   border-radius: 28px;
   overflow: hidden;
   border: 1px solid var(--border-soft);
