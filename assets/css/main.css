@@ -223,7 +223,7 @@ img { max-width: 100%; height: auto; display: block; }
     gap: 80px;
   }
   .hero-copy { text-align: left; }
-  .hero .lead { margin-left: 0; }
+  .hero-copy .lead { margin-left: 0; }
   .cta-row { justify-content: flex-start; }
 }
 .btn {
