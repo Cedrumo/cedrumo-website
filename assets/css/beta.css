@@ -163,6 +163,27 @@
 }
 .beta-trouble strong { color: var(--text-primary); }
 
+.beta-prereq { max-width: 660px; margin: 18px auto 0; padding: 0 var(--gutter); }
+.beta-prereq .inner {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-soft);
+  border-left: 3px solid var(--gold);
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+.beta-prereq .inner strong { color: var(--gold); }
+.beta-prereq .inner .en { display: block; margin-top: 6px; }
+
+.beta-steps .step-hint {
+  margin-top: 11px;
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
 .beta-divider {
   border: 0;
   border-top: 1px solid var(--border-soft);
