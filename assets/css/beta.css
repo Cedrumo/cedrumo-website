@@ -1,0 +1,184 @@
+/* CEDRUMO — TestFlight onboarding page (cedrumo.com/beta)
+   Loaded after main.css; reuses the midnight-blue + gold tokens, fonts,
+   header, footer and .btn components defined there. CSP forbids inline
+   styles (style-src 'self'), so all page-specific rules live here. */
+
+.lang-bar {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 22px var(--gutter) 0;
+}
+.lang-bar a {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid var(--border-soft);
+  padding: 6px 16px;
+  border-radius: 4px;
+  color: var(--text-secondary);
+}
+.lang-bar a:hover { border-color: var(--gold); color: var(--gold); }
+
+.beta-hero {
+  text-align: center;
+  padding: 40px 0 4px;
+  background: radial-gradient(ellipse at top, rgba(26, 39, 64, 0.5) 0%, transparent 62%);
+}
+.beta-hero .eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+.beta-hero h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(28px, 6vw, 44px);
+  font-weight: 600;
+  color: var(--cream);
+  line-height: 1.12;
+  letter-spacing: 0.5px;
+  margin: 0 auto 14px;
+  max-width: 620px;
+  overflow-wrap: anywhere;
+}
+.beta-hero p.lead {
+  font-size: 17px;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+.beta-wrap {
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.beta-block { padding: 36px 0 8px; }
+.beta-block .lang-tag {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.beta-block h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(24px, 4.5vw, 32px);
+  font-weight: 600;
+  color: var(--cream);
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+}
+.beta-block .intro {
+  color: var(--text-secondary);
+  font-size: 16px;
+  margin: 12px 0 0;
+}
+
+.beta-steps {
+  list-style: none;
+  counter-reset: step;
+  margin: 30px 0 0;
+  padding: 0;
+}
+.beta-steps > li {
+  position: relative;
+  padding: 0 0 30px 62px;
+}
+.beta-steps > li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(212, 184, 122, 0.12);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.beta-steps > li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 22px;
+  top: 48px;
+  bottom: 6px;
+  width: 1px;
+  background: var(--border-soft);
+}
+.beta-steps > li .step-text {
+  font-size: 16px;
+  color: var(--text-primary);
+  line-height: 1.55;
+  padding-top: 9px;
+}
+.beta-steps .appname,
+.beta-steps .ui-label {
+  color: var(--gold);
+  font-weight: 600;
+}
+.beta-steps .btn {
+  margin-top: 14px;
+  width: 100%;
+  text-align: center;
+  padding: 15px 24px;
+  font-size: 15px;
+}
+
+.beta-note {
+  margin: 18px 0 0;
+  background: var(--navy);
+  border: 1px solid var(--gold);
+  border-radius: 10px;
+  padding: 18px 22px;
+  color: var(--cream);
+  font-size: 15px;
+  line-height: 1.55;
+}
+.beta-note strong { color: var(--gold); }
+
+.beta-trouble {
+  margin: 16px 0 0;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-soft);
+  border-left: 3px solid var(--gold);
+  border-radius: 8px;
+  padding: 16px 20px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.beta-trouble strong { color: var(--text-primary); }
+
+.beta-divider {
+  border: 0;
+  border-top: 1px solid var(--border-soft);
+  margin: 46px auto 0;
+  max-width: 660px;
+}
+
+.beta-back {
+  text-align: center;
+  padding: 40px 0 8px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .beta-steps > li { padding-left: 56px; }
+  .beta-steps > li::before { width: 40px; height: 40px; font-size: 20px; }
+  .beta-steps > li:not(:last-child)::after { left: 20px; }
+}
