@@ -38,7 +38,7 @@
 <link rel="stylesheet" href="/assets/css/main.css?v=20260729a">
   <script async src="https://plausible.io/js/pa-OkKCp-6LZZtvZIi8NyVnz.js"></script>
   <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
-  <script defer src="/assets/js/signup.js?v=20260729a"></script>
+  <script defer src="/assets/js/signup.js?v=20260729b"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -70,7 +70,8 @@
         <p class="hero-claim">Not just any cigar. The right one for this moment.</p>
         <p class="launch-note">Launching early August. Pre-register now and be among the first to experience CEDRUMO.</p>
         <!-- Pre-registration signup. Wire action= to the EU ESP (Brevo/Sendinblue) double-opt-in form endpoint once the account exists; Brevo handles the confirmation email + EU-hosted storage. -->
-        <form class="signup" action="ESP_FORM_ACTION_PLACEHOLDER" method="post" novalidate>
+        <form class="signup" action="https://europe-west3-cigar-collection-manager.cloudfunctions.net/launchSubscribe" method="post" novalidate>
+          <input type="text" name="email_address_check" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true">
           <div class="signup-row">
             <label class="visually-hidden" for="signup-email">Email address</label>
             <input id="signup-email" class="signup-input" type="email" name="EMAIL" required autocomplete="email" placeholder="Your email address">
@@ -221,7 +222,8 @@
         <h2>Be there from the start</h2>
         <p class="lead">CEDRUMO launches in early August in German-speaking Europe, with further markets to follow. Pre-register and we will let you know first.</p>
       </div>
-      <form class="signup launch-signup" action="ESP_FORM_ACTION_PLACEHOLDER" method="post" novalidate>
+      <form class="signup launch-signup" action="https://europe-west3-cigar-collection-manager.cloudfunctions.net/launchSubscribe" method="post" novalidate>
+        <input type="text" name="email_address_check" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true">
         <div class="signup-row">
           <label class="visually-hidden" for="signup-email-2">Email address</label>
           <input id="signup-email-2" class="signup-input" type="email" name="EMAIL" required autocomplete="email" placeholder="Your email address">
