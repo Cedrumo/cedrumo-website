@@ -35,7 +35,7 @@
   <title>CEDRUMO — Persönlicher Begleiter für Zigarrengenuss</title>
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/cormorant-garamond-400.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/inter-400.woff2">
-<link rel="stylesheet" href="/assets/css/main.css?v=20260622e">
+<link rel="stylesheet" href="/assets/css/main.css?v=20260729a">
   <script async src="https://plausible.io/js/pa-OkKCp-6LZZtvZIi8NyVnz.js"></script>
   <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
 </head>
@@ -67,10 +67,20 @@
         <div class="tagline">Ihre Sammlung. Ihre Momente. Ihre Daten.</div>
         <p class="lead">CEDRUMO ist Ihr persönlicher Begleiter für Humidor, Pairing und die bewusste Genussentscheidung. Organisieren Sie Ihre Zigarrensammlung, finden Sie die passende Zigarre und den passenden Rum für den Moment und behalten Sie Wert, Bestand und Favoriten im Blick — werbefrei, trackingfrei und mit Respekt vor Ihren Daten.</p>
         <p class="hero-claim">Nicht irgendeine Zigarre. Die richtige für diesen Moment.</p>
-        <div class="cta-row">
-          <a href="#download" class="btn btn-primary">App laden</a>
-          <a href="/de/features/" class="btn btn-ghost">Funktionen entdecken</a>
-        </div>
+        <p class="launch-note">Start Anfang August. Jetzt vormerken und zu den Ersten gehören, die CEDRUMO erleben.</p>
+        <!-- Pre-registration signup. Wire action= to the EU ESP (Brevo/Sendinblue) double-opt-in form endpoint once the account exists; Brevo handles the confirmation email + EU-hosted storage. -->
+        <form class="signup" action="ESP_FORM_ACTION_PLACEHOLDER" method="post" novalidate>
+          <div class="signup-row">
+            <label class="visually-hidden" for="signup-email">E-Mail-Adresse</label>
+            <input id="signup-email" class="signup-input" type="email" name="EMAIL" required autocomplete="email" placeholder="Ihre E-Mail-Adresse">
+            <button class="btn btn-primary" type="submit">Jetzt vormerken</button>
+          </div>
+          <label class="signup-consent">
+            <input type="checkbox" name="OPT_IN" value="1" required>
+            <span>Ich möchte per E-Mail über den Launch von CEDRUMO informiert werden. Die Einwilligung kann ich jederzeit widerrufen. Weitere Informationen in der <a href="/de/privacy/">Datenschutzerklärung</a>.</span>
+          </label>
+        </form>
+        <a href="/de/features/" class="signup-secondary">Zuerst die Funktionen entdecken</a>
       </div>
       <div class="hero-visuals">
         <div class="phone-frame phone-frame--rear">
@@ -167,16 +177,31 @@
     </div>
   </section>
 
+  <!-- LAUNCH CTA. Pre-registration is live now. At launch, swap the .launch-signup form for the .store-badges block below (uncomment) to flip the primary CTA to the App Store + Play links, no rebuild needed. -->
   <section id="download">
     <div class="container">
       <div class="section-head">
-        <div class="eyebrow">App laden</div>
-        <h2>Verfügbar im Apple App Store und Google Play</h2>
-        <p class="lead">Ihr nächster Genussmoment wartet schon. CEDRUMO startet in Deutschland, Österreich und der Schweiz, weitere Märkte folgen.</p>
+        <div class="eyebrow">Bald verfügbar</div>
+        <h2>Seien Sie beim Start dabei</h2>
+        <p class="lead">CEDRUMO startet Anfang August in Deutschland, Österreich und der Schweiz, weitere Märkte folgen. Merken Sie sich vor, und wir sagen Ihnen als Erstes Bescheid.</p>
       </div>
-      <div class="cta-row">
-        <a href="mailto:info@cedrumo.com?subject=Launch-Benachrichtigung" class="btn btn-primary">Benachrichtigen lassen</a>
+      <form class="signup launch-signup" action="ESP_FORM_ACTION_PLACEHOLDER" method="post" novalidate>
+        <div class="signup-row">
+          <label class="visually-hidden" for="signup-email-2">E-Mail-Adresse</label>
+          <input id="signup-email-2" class="signup-input" type="email" name="EMAIL" required autocomplete="email" placeholder="Ihre E-Mail-Adresse">
+          <button class="btn btn-primary" type="submit">Jetzt vormerken</button>
+        </div>
+        <label class="signup-consent">
+          <input type="checkbox" name="OPT_IN" value="1" required>
+          <span>Ich möchte per E-Mail über den Launch von CEDRUMO informiert werden. Widerruf jederzeit möglich. Details in der <a href="/de/privacy/">Datenschutzerklärung</a>.</span>
+        </label>
+      </form>
+      <!-- POST-LAUNCH: uncomment to replace the signup above with the live store links.
+      <div class="store-badges">
+        <a href="APP_STORE_URL" class="btn btn-primary">Im App Store laden</a>
+        <a href="GOOGLE_PLAY_URL" class="btn btn-primary">Bei Google Play</a>
       </div>
+      -->
     </div>
   </section>
 
