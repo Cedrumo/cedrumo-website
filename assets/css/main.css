@@ -669,6 +669,39 @@ section.alt { background: var(--bg-surface); }
   background: var(--bg-deep);
 }
 .story-phone video { display: block; width: 100%; height: auto; }
+.planner { padding: 8px 0 4px; }
+.planner-card {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid var(--gold);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(212, 184, 122, 0.10), rgba(212, 184, 122, 0.02));
+  padding: 40px 32px;
+}
+.planner-badge {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  padding: 6px 15px;
+  margin-bottom: 18px;
+}
+.planner-card h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  color: var(--cream);
+  font-size: clamp(24px, 5.5vw, 32px);
+  margin: 0 0 14px;
+}
+.planner-card p {
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0 auto;
+  max-width: 620px;
+}
 @media (min-width: 780px) {
   .story-grid { grid-template-columns: 1fr 1fr; gap: 64px; text-align: left; }
   .story-text p { margin-left: 0; }
