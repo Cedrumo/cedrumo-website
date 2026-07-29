@@ -668,6 +668,7 @@ section.alt { background: var(--bg-surface); }
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   background: var(--bg-deep);
 }
+.story-phone video { display: block; width: 100%; height: auto; }
 @media (min-width: 780px) {
   .story-grid { grid-template-columns: 1fr 1fr; gap: 64px; text-align: left; }
   .story-text p { margin-left: 0; }
