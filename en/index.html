@@ -67,10 +67,20 @@
         <div class="tagline">Your collection. Your moments. Your data.</div>
         <p class="lead">CEDRUMO is your private cigar collection, humidor and pairing companion, built for aficionadas and aficionados worldwide. Organise your collection, find the right cigar for the evening, and keep value, stock and favourites in view — ad-free, tracking-free and with respect for your data.</p>
         <p class="hero-claim">Not just any cigar. The right one for this moment.</p>
-        <div class="cta-row">
-          <a href="#download" class="btn btn-primary">Get the app</a>
-          <a href="/en/features/" class="btn btn-ghost">Explore features</a>
-        </div>
+        <p class="launch-note">Launching early August. Pre-register now and be among the first to experience CEDRUMO.</p>
+        <!-- Pre-registration signup. Wire action= to the EU ESP (Brevo/Sendinblue) double-opt-in form endpoint once the account exists; Brevo handles the confirmation email + EU-hosted storage. -->
+        <form class="signup" action="ESP_FORM_ACTION_PLACEHOLDER" method="post" novalidate>
+          <div class="signup-row">
+            <label class="visually-hidden" for="signup-email">Email address</label>
+            <input id="signup-email" class="signup-input" type="email" name="EMAIL" required autocomplete="email" placeholder="Your email address">
+            <button class="btn btn-primary" type="submit">Pre-register</button>
+          </div>
+          <label class="signup-consent">
+            <input type="checkbox" name="OPT_IN" value="1" required>
+            <span>I would like to be notified by email about the launch of CEDRUMO. I can withdraw this consent at any time. More in the <a href="/en/privacy/">privacy notice</a>.</span>
+          </label>
+        </form>
+        <a href="/en/features/" class="signup-secondary">Explore the features first</a>
       </div>
       <div class="hero-visuals">
         <div class="phone-frame phone-frame--rear">
@@ -167,16 +177,31 @@
     </div>
   </section>
 
+  <!-- LAUNCH CTA. Pre-registration is live now. At launch, swap the .launch-signup form for the .store-badges block below (uncomment) to flip the primary CTA to the App Store + Play links, no rebuild needed. -->
   <section id="download">
     <div class="container">
       <div class="section-head">
-        <div class="eyebrow">Get the app</div>
-        <h2>Available on the Apple App Store and Google Play</h2>
-        <p class="lead">Your next moment of enjoyment is already waiting. CEDRUMO first launches in German-speaking Europe, with further markets to follow.</p>
+        <div class="eyebrow">Coming soon</div>
+        <h2>Be there from the start</h2>
+        <p class="lead">CEDRUMO launches in early August in German-speaking Europe, with further markets to follow. Pre-register and we will let you know first.</p>
       </div>
-      <div class="cta-row">
-        <a href="mailto:info@cedrumo.com?subject=Launch%20notification" class="btn btn-primary">Notify me at launch</a>
+      <form class="signup launch-signup" action="ESP_FORM_ACTION_PLACEHOLDER" method="post" novalidate>
+        <div class="signup-row">
+          <label class="visually-hidden" for="signup-email-2">Email address</label>
+          <input id="signup-email-2" class="signup-input" type="email" name="EMAIL" required autocomplete="email" placeholder="Your email address">
+          <button class="btn btn-primary" type="submit">Pre-register</button>
+        </div>
+        <label class="signup-consent">
+          <input type="checkbox" name="OPT_IN" value="1" required>
+          <span>I would like to be notified by email about the launch of CEDRUMO. Withdrawable at any time. Details in the <a href="/en/privacy/">privacy notice</a>.</span>
+        </label>
+      </form>
+      <!-- POST-LAUNCH: uncomment to replace the signup above with the live store links.
+      <div class="store-badges">
+        <a href="APP_STORE_URL" class="btn btn-primary">Download on the App Store</a>
+        <a href="GOOGLE_PLAY_URL" class="btn btn-primary">Get it on Google Play</a>
       </div>
+      -->
     </div>
   </section>
 
