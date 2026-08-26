@@ -3,6 +3,12 @@ node_modules/
 .env
 *.log
 .idea/
+# Editor config and the FontAwesome bundle are never part of the deployed site.
+# They were the delivery vector for a supply-chain payload (a fake-font Node
+# loader auto-run by a hidden .vscode task). Kept out of the repo permanently so
+# a broad `git add` can never sweep them back in.
+.vscode/
+public/fonts/
 branch_structure.json
 temp_auto_push.bat
 temp_interactive_push.bat
