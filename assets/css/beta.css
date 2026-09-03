@@ -203,3 +203,15 @@
   .beta-steps > li::before { width: 40px; height: 40px; font-size: 20px; }
   .beta-steps > li:not(:last-child)::after { left: 20px; }
 }
+
+/* Launch status banner. Android went live 2026-08-31; this page now leads with
+   where each platform stands and keeps the TestFlight guide below for iOS. */
+.beta-status {
+  background: var(--navy);
+  border-bottom: 1px solid var(--gold);
+  padding: 22px 0;
+}
+.beta-status p { color: var(--text-primary); font-size: 15px; line-height: 1.65; margin: 0 0 12px; }
+.beta-status p:last-child { margin-bottom: 0; }
+.beta-status .en { color: var(--text-secondary); font-size: 14px; }
+.beta-status .btn { margin-top: 2px; }
