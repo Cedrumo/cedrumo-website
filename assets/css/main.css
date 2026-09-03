@@ -307,9 +307,27 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .signup-secondary:hover { color: var(--gold); border-color: var(--gold); }
 .store-badges { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.store-badges--hero { justify-content: center; margin: 0 auto; max-width: 520px; }
+/* Placeholder for a store that is not live yet. Reads as a state, not a dead button. */
+.btn-pending {
+  border: 1px solid var(--border-soft);
+  color: var(--text-secondary);
+  cursor: default;
+  background: transparent;
+}
+.store-note {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 16px auto 0;
+  max-width: 520px;
+}
+.store-note--center { text-align: center; margin-top: 18px; }
 @media (min-width: 900px) {
   .hero-copy .signup, .hero-copy .launch-note { margin-left: 0; }
   .hero-copy .signup { text-align: left; }
+  .hero-copy .store-badges--hero { justify-content: flex-start; margin-left: 0; }
+  .hero-copy .store-note { margin-left: 0; text-align: left; }
 }
 
 /* SECTIONS */
@@ -870,7 +888,7 @@ section.alt { background: var(--bg-surface); }
     color: #000 !important;
     overflow-x: visible;
   }
-  .site-header, .site-footer, .skip-link, .cta-row, .hero-visuals, .qr-block .qr-slot {
+  .site-header, .site-footer, .skip-link, .cta-row, .hero-visuals {
     display: none !important;
   }
   .hero { padding: 0 0 24px; background: none; }

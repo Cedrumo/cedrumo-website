@@ -35,10 +35,9 @@
   <title>CEDRUMO — Personal Companion for Cigar Aficionadas and Aficionados</title>
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/cormorant-garamond-400.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/inter-400.woff2">
-<link rel="stylesheet" href="/assets/css/main.css?v=20260730a">
+<link rel="stylesheet" href="/assets/css/main.css?v=20260903a">
   <script async src="https://plausible.io/js/pa-OkKCp-6LZZtvZIi8NyVnz.js"></script>
   <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
-  <script defer src="/assets/js/signup.js?v=20260729b"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -68,21 +67,13 @@
         <div class="tagline">Your collection. Your moments. Your data.</div>
         <p class="lead">CEDRUMO is your private cigar collection, humidor and pairing companion, built for aficionadas and aficionados worldwide. Scan your cigars, organise your collection, find the right cigar for the evening, and keep value, stock and favourites in view, ad-free and with respect for your data.</p>
         <p class="hero-claim">Not just any cigar. The right one for this moment.</p>
-        <p class="launch-note">Launching early August. Pre-register now and be among the first to experience CEDRUMO.</p>
-        <!-- Pre-registration signup. Wire action= to the EU ESP (Brevo/Sendinblue) double-opt-in form endpoint once the account exists; Brevo handles the confirmation email + EU-hosted storage. -->
-        <form class="signup" action="https://europe-west3-cigar-collection-manager.cloudfunctions.net/launchSubscribe" method="post" novalidate>
-          <input type="text" name="email_address_check" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true">
-          <div class="signup-row">
-            <label class="visually-hidden" for="signup-email">Email address</label>
-            <input id="signup-email" class="signup-input" type="email" name="EMAIL" required autocomplete="email" placeholder="Your email address">
-            <button class="btn btn-primary" type="submit">Pre-register</button>
-          </div>
-          <label class="signup-consent">
-            <input type="checkbox" name="OPT_IN" value="1" required>
-            <span>I would like to be notified by email about the launch of CEDRUMO. I can withdraw this consent at any time. More in the <a href="/en/privacy/">privacy notice</a>.</span>
-          </label>
-        </form>
-        <a href="/en/features/" class="signup-secondary">Explore the features first</a>
+        <p class="launch-note">CEDRUMO is available now. Download the app and start your personal cigar and rum collection.</p>
+        <div class="store-badges store-badges--hero">
+          <a href="https://play.google.com/store/apps/details?id=com.cigarcollectionmanager.cigar_collection_manager" class="btn btn-primary">Get it on Google Play</a>
+          <span class="btn btn-pending" aria-disabled="true">Coming soon on the App Store</span>
+        </div>
+        <p class="store-note">Premium: EUR 2.99 per month or EUR 29.90 per year, including up to 50 AI scans per month. Free for the first seven days.</p>
+        <a href="/en/features/" class="signup-secondary">Discover CEDRUMO</a>
       </div>
       <div class="hero-visuals">
         <div class="phone-frame phone-frame--rear">
@@ -102,7 +93,7 @@
         <div class="eyebrow">Recognise</div>
         <h2>Scan and recognise your cigar</h2>
         <p>Simply photograph the cigar band and CEDRUMO takes care of the rest. The app scans the cigar and suggests the brand, series or line, country of origin, blend with blend notes, along with matching aromas and tasting notes. You enter the format yourself, it is not detected automatically. Then a quick check, confirm, done.</p>
-        <p>Three free cigar scans. From the fourth scan onwards, CEDRUMO Premium is required. You can try Premium free for seven days.</p>
+        <p>Three free cigar scans. From the fourth scan onwards, CEDRUMO Premium includes up to 50 AI scans per month. You can try Premium free for seven days.</p>
       </div>
       <div class="story-media">
         <div class="story-phone"><div class="story-rotator"><img src="/assets/images/app-hero-cigar.jpg" alt="CEDRUMO cigar detail with photo, rating and aromas" loading="lazy"><img src="/assets/images/app-scan-prompt.jpg" alt="CEDRUMO scan dialog: photograph the cigar band" loading="lazy"></div></div>
@@ -226,32 +217,27 @@
     </div>
   </section>
 
-  <!-- LAUNCH CTA. Pre-registration is live now. At launch, swap the .launch-signup form for the .store-badges block below (uncomment) to flip the primary CTA to the App Store + Play links, no rebuild needed. -->
+  <!-- LAUNCH CTA. Live since the Google Play release on 2026-08-31. The Apple button becomes a
+       real link once the App Store review clears; swap the .btn-pending span for an anchor. -->
   <section id="download">
     <div class="container">
       <div class="section-head">
-        <div class="eyebrow">Coming soon</div>
-        <h2>Be there from the start</h2>
-        <p class="lead">CEDRUMO launches in early August in German-speaking Europe, with further markets to follow. Pre-register and we will let you know first.</p>
+        <div class="eyebrow">Available now</div>
+        <h2>Get CEDRUMO here</h2>
+        <p class="lead">CEDRUMO is available in Germany, Austria and Switzerland, with further markets to follow. Scan the code or pick your store.</p>
       </div>
-      <form class="signup launch-signup" action="https://europe-west3-cigar-collection-manager.cloudfunctions.net/launchSubscribe" method="post" novalidate>
-        <input type="text" name="email_address_check" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true">
-        <div class="signup-row">
-          <label class="visually-hidden" for="signup-email-2">Email address</label>
-          <input id="signup-email-2" class="signup-input" type="email" name="EMAIL" required autocomplete="email" placeholder="Your email address">
-          <button class="btn btn-primary" type="submit">Pre-register</button>
-        </div>
-        <label class="signup-consent">
-          <input type="checkbox" name="OPT_IN" value="1" required>
-          <span>I would like to be notified by email about the launch of CEDRUMO. Withdrawable at any time. Details in the <a href="/en/privacy/">privacy notice</a>.</span>
-        </label>
-      </form>
-      <!-- POST-LAUNCH: uncomment to replace the signup above with the live store links.
       <div class="store-badges">
-        <a href="APP_STORE_URL" class="btn btn-primary">Download on the App Store</a>
-        <a href="GOOGLE_PLAY_URL" class="btn btn-primary">Get it on Google Play</a>
+        <a href="https://play.google.com/store/apps/details?id=com.cigarcollectionmanager.cigar_collection_manager" class="btn btn-primary">Get it on Google Play</a>
+        <span class="btn btn-pending" aria-disabled="true">Coming soon on the App Store</span>
       </div>
-      -->
+      <p class="store-note store-note--center">Premium: EUR 2.99 per month or EUR 29.90 per year, including up to 50 AI scans per month. Free for the first seven days.</p>
+      <div class="qr-block">
+        <div class="text">
+          <h3>Open it on your phone</h3>
+          <p>Scan the code or open <a href="/app">cedrumo.com/app</a>. The page detects your device and takes you straight to the right store. One code for Android and iPhone, print included.</p>
+        </div>
+        <div class="qr-slot"><img src="/assets/images/qr-cedrumo-app.png" width="1332" height="1332" alt="QR code to cedrumo.com/app"></div>
+      </div>
     </div>
   </section>
 
