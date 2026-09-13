@@ -35,13 +35,13 @@
   <link rel="stylesheet" href="/assets/css/main.css?v=20260903a">
   <link rel="stylesheet" href="/assets/css/app.css?v=20260903a">
   <script>
-  /* Device-aware store redirect.
-     APPLE_URL is null until the App Store review clears. Set it to the real
-     App Store URL and iPhone/iPad visitors are redirected automatically;
-     nothing else on this page needs to change. */
+  /* Device-aware store redirect. Android goes to Google Play, iPhone and iPad
+     to the App Store (live since 2026-09-13). The /de/ storefront URL is used on
+     purpose: the country-less URL resolves outside DACH and returns 404, while
+     the App Store app on a device opens the listing in the visitor's own store. */
   (function () {
     var PLAY_URL  = 'https://play.google.com/store/apps/details?id=com.cigarcollectionmanager.cigar_collection_manager';
-    var APPLE_URL = null;
+    var APPLE_URL = 'https://apps.apple.com/de/app/cigar-collection-by-cedrumo/id6764248343';
     var ua = navigator.userAgent || '';
     var isAndroid = /Android/i.test(ua);
     // iPadOS 13+ reports as Macintosh, so check for touch as well.
@@ -68,17 +68,17 @@
     <div class="container">
       <div class="redirect-wrap">
         <h1>CEDRUMO herunterladen</h1>
-        <p class="lead">Wähle deinen Store. Auf Android öffnet sich Google Play automatisch.</p>
-        <p class="lead-en">Download CEDRUMO. Pick your store below. On Android, Google Play opens automatically.</p>
+        <p class="lead">Wähle deinen Store. Auf Android und iPhone öffnet sich der passende Store automatisch.</p>
+        <p class="lead-en">Download CEDRUMO. Pick your store below. On Android and iPhone the right store opens automatically.</p>
 
         <div class="store-badges">
           <a href="https://play.google.com/store/apps/details?id=com.cigarcollectionmanager.cigar_collection_manager" class="btn btn-primary">Bei Google Play</a>
-          <span class="btn btn-pending" aria-disabled="true">Demnächst im App Store</span>
+          <a href="https://apps.apple.com/de/app/cigar-collection-by-cedrumo/id6764248343" class="btn btn-primary">Im App Store</a>
         </div>
 
         <p class="redirect-note">
-          CEDRUMO ist in Deutschland, Österreich und der Schweiz verfügbar. Die iPhone-Version folgt, sobald die Prüfung im App Store abgeschlossen ist.<br>
-          <span lang="en">CEDRUMO is available in Germany, Austria and Switzerland. The iPhone version follows once the App Store review is complete.</span>
+          CEDRUMO ist in Deutschland, Österreich und der Schweiz für Android und iPhone verfügbar.<br>
+          <span lang="en">CEDRUMO is available for Android and iPhone in Germany, Austria and Switzerland.</span>
         </p>
 
         <a href="/de/" class="redirect-back">Zur CEDRUMO Website / Back to the website</a>
