@@ -843,6 +843,20 @@ section.alt { background: var(--bg-surface); }
   line-height: 1.6;
   max-width: 300px;
 }
+.footer-social {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+.footer-social a {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+.footer-social a:hover { color: var(--gold); }
+.footer-social a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
 .footer-bottom {
   border-top: 1px solid var(--border-soft);
   padding-top: 24px;
@@ -876,7 +890,7 @@ section.alt { background: var(--bg-surface); }
   .lang-switch { margin-left: auto; }
   section { padding: 56px 0; }
   .hero { padding: 64px 0 48px; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
 }
 
