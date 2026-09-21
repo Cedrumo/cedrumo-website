@@ -171,6 +171,11 @@ img { max-width: 100%; height: auto; display: block; }
   margin: 0 auto 40px;
   line-height: 1.7;
 }
+.hero .lead-muted {
+  margin-top: 32px;
+  font-size: 14px;
+  opacity: 0.7;
+}
 .cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
 /* HERO LAYOUT WITH APP VISUALS */
