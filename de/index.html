@@ -285,5 +285,33 @@
   </div>
 </footer>
 
+<script>
+  (function () {
+    var APPLE_STORES = {
+      de: 'https://apps.apple.com/de/app/cigar-collection-by-cedrumo/id6764248343',
+      es: 'https://apps.apple.com/es/app/cigar-collection-by-cedrumo/id6764248343',
+      at: 'https://apps.apple.com/at/app/cigar-collection-by-cedrumo/id6764248343',
+      ch: 'https://apps.apple.com/ch/app/cigar-collection-by-cedrumo/id6764248343'
+    };
+    var APPLE_IOS_URL = 'https://apps.apple.com/app/id6764248343';
+    function appleCountry() {
+      var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ''];
+      for (var i = 0; i < langs.length; i++) {
+        var m = /-([A-Za-z]{2})$/.exec(langs[i] || '');
+        var region = m ? m[1].toLowerCase() : '';
+        if (APPLE_STORES[region]) { return region; }
+      }
+      var primary = ((langs[0] || '').split('-')[0] || '').toLowerCase();
+      if (primary === 'de' || primary === 'es') { return primary; }
+      return 'de';
+    }
+    var ua = navigator.userAgent || '';
+    var isIOS = /iPhone|iPad|iPod/i.test(ua) ||
+                (/Macintosh/i.test(ua) && typeof document !== 'undefined' && 'ontouchend' in document);
+    var appleUrl = isIOS ? APPLE_IOS_URL : APPLE_STORES[appleCountry()];
+    var links = document.querySelectorAll('a[href*="apps.apple.com"]');
+    for (var j = 0; j < links.length; j++) { links[j].href = appleUrl; }
+  })();
+  </script>
 </body>
 </html>

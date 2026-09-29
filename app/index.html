@@ -35,20 +35,38 @@
   <link rel="stylesheet" href="/assets/css/main.css?v=20260921b">
   <link rel="stylesheet" href="/assets/css/app.css?v=20260903a">
   <script>
-  /* Device-aware store redirect. Android goes to Google Play, iPhone and iPad
-     to the App Store (live since 2026-09-13). The /de/ storefront URL is used on
-     purpose: the country-less URL resolves outside DACH and returns 404, while
-     the App Store app on a device opens the listing in the visitor's own store. */
   (function () {
     var PLAY_URL  = 'https://play.google.com/store/apps/details?id=com.cigarcollectionmanager.cigar_collection_manager';
-    var APPLE_URL = 'https://apps.apple.com/de/app/cigar-collection-by-cedrumo/id6764248343';
+    var APPLE_IOS_URL = 'https://apps.apple.com/app/id6764248343';
+    var APPLE_STORES = {
+      de: 'https://apps.apple.com/de/app/cigar-collection-by-cedrumo/id6764248343',
+      es: 'https://apps.apple.com/es/app/cigar-collection-by-cedrumo/id6764248343',
+      at: 'https://apps.apple.com/at/app/cigar-collection-by-cedrumo/id6764248343',
+      ch: 'https://apps.apple.com/ch/app/cigar-collection-by-cedrumo/id6764248343'
+    };
+    function appleCountry() {
+      var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ''];
+      for (var i = 0; i < langs.length; i++) {
+        var m = /-([A-Za-z]{2})$/.exec(langs[i] || '');
+        var region = m ? m[1].toLowerCase() : '';
+        if (APPLE_STORES[region]) { return region; }
+      }
+      var primary = ((langs[0] || '').split('-')[0] || '').toLowerCase();
+      if (primary === 'de' || primary === 'es') { return primary; }
+      return 'de';
+    }
     var ua = navigator.userAgent || '';
     var isAndroid = /Android/i.test(ua);
     // iPadOS 13+ reports as Macintosh, so check for touch as well.
     var isIOS = /iPhone|iPad|iPod/i.test(ua) ||
                 (/Macintosh/i.test(ua) && typeof document !== 'undefined' && 'ontouchend' in document);
+    var APPLE_URL = isIOS ? APPLE_IOS_URL : APPLE_STORES[appleCountry()];
     if (isAndroid) { location.replace(PLAY_URL); return; }
     if (isIOS && APPLE_URL) { location.replace(APPLE_URL); }
+    document.addEventListener('DOMContentLoaded', function () {
+      var link = document.querySelector('a[href*="apps.apple.com"]');
+      if (link) { link.href = APPLE_URL; }
+    });
   })();
   </script>
   <script async src="https://plausible.io/js/pa-OkKCp-6LZZtvZIi8NyVnz.js"></script>
