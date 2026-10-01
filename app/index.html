@@ -42,8 +42,17 @@
       de: 'https://apps.apple.com/de/app/cigar-collection-by-cedrumo/id6764248343',
       es: 'https://apps.apple.com/es/app/cigar-collection-by-cedrumo/id6764248343',
       at: 'https://apps.apple.com/at/app/cigar-collection-by-cedrumo/id6764248343',
-      ch: 'https://apps.apple.com/ch/app/cigar-collection-by-cedrumo/id6764248343'
+      ch: 'https://apps.apple.com/ch/app/cigar-collection-by-cedrumo/id6764248343',
+      gb: 'https://apps.apple.com/gb/app/cigar-collection-by-cedrumo/id6764248343',
+      ie: 'https://apps.apple.com/ie/app/cigar-collection-by-cedrumo/id6764248343',
+      ca: 'https://apps.apple.com/ca/app/cigar-collection-by-cedrumo/id6764248343',
+      au: 'https://apps.apple.com/au/app/cigar-collection-by-cedrumo/id6764248343',
+      nz: 'https://apps.apple.com/nz/app/cigar-collection-by-cedrumo/id6764248343',
+      sg: 'https://apps.apple.com/sg/app/cigar-collection-by-cedrumo/id6764248343',
+      mt: 'https://apps.apple.com/mt/app/cigar-collection-by-cedrumo/id6764248343',
+      za: 'https://apps.apple.com/za/app/cigar-collection-by-cedrumo/id6764248343'
     };
+    var APPLE_FALLBACK_BY_LANG = { de: 'de', es: 'es', en: 'gb' };
     function appleCountry() {
       var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ''];
       for (var i = 0; i < langs.length; i++) {
@@ -52,8 +61,8 @@
         if (APPLE_STORES[region]) { return region; }
       }
       var primary = ((langs[0] || '').split('-')[0] || '').toLowerCase();
-      if (primary === 'de' || primary === 'es') { return primary; }
-      return 'de';
+      var fallback = APPLE_FALLBACK_BY_LANG[primary] || 'de';
+      return APPLE_STORES[fallback] ? fallback : 'de';
     }
     var ua = navigator.userAgent || '';
     var isAndroid = /Android/i.test(ua);
